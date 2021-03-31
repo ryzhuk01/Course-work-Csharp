@@ -1,0 +1,52 @@
+﻿<Page x:Class="CourseWork.View.Account"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CourseWork.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="408.8" d:DesignWidth="666.4"
+      Title="Account">
+    <Page.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="TextAlignment" Value="Right"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="Width" Value="160"/>
+            <Setter Property="Margin" Value="0,20,0,0"/>
+        </Style>
+    </Page.Resources>
+    <Grid Background="#b7e5df">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.35*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+        </Grid.RowDefinitions>
+        <Button Background="#58837e" Grid.Column="2"  Width="200" Height="40" Margin="200,29,0,0" Command="{Binding SaveUserChanges}">Сохранить изменения</Button>
+<TextBlock Grid.ColumnSpan="2" VerticalAlignment="Top" Text="Личная информация" FontSize="16" TextAlignment="Center" Width="200" Height="35" Margin="0,0,0,0"/>
+            
+        <StackPanel Margin="0,40,0,0" Grid.Column="0"  HorizontalAlignment="Right" VerticalAlignment="Top" >
+
+            <TextBlock Text="Имя" />
+            <TextBlock Text="Фамилия" />
+            <TextBlock Text="Email" />
+            <TextBlock Text="Страна" />
+            <TextBlock Text="Организация" />
+            <TextBlock Text="Номер телефона" />
+            <TextBlock Text="Пароль" />
+
+        </StackPanel>
+        <StackPanel Margin="0,40,0,0" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" >
+
+            <TextBox Width="160" Height="25" Margin="20,20,0,0" FontSize="14" Text="{Binding CurrentUser.FirstName}" />
+            <TextBox Width="160" Height="25" Margin="20,20,0,0" FontSize="14" Text="{Binding CurrentUser.LastName}"/>
+            <TextBox Width="160" Height="25" Margin="20,20,0,0" FontSize="14" Text="{Binding CurrentUser.Email}"/>
+            <TextBox Width="160" Height="25" Margin="20,20,0,0" FontSize="14" Text="{Binding CurrentUser.Country}"/>
+            <TextBox Width="160" Height="25" Margin="20,20,0,0" FontSize="14"  Text="{Binding CurrentUser.Organization}"/>
+            <TextBox Width="160" Height="25" Margin="20,20,0,0" FontSize="14" Text="{Binding CurrentUser.TelephoneNumber}"/>
+            <PasswordBox KeyUp="pass_KeyDown" x:Name="passs" Width="160" Height="25" Margin="20,20,0,0" FontSize="14" />
+            
+        </StackPanel>
+    </Grid>
+</Page>

@@ -1,0 +1,51 @@
+﻿<Page x:Class="CourseWork.RegistrationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CourseWork"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="400"
+      Title="RegistrationPage">
+    <Page.Resources >
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="TextAlignment" Value="Left"/>
+        </Style>
+    </Page.Resources>
+    <Grid Background="#b7e5df">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="0.1*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel  Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+            <TextBlock Text="Регистрация" HorizontalAlignment="Center" FontSize="22" TextAlignment="Left" Margin="0,0,0,20"/>
+            <TextBlock Text="Имя" />
+            <TextBox Height="25" Width="250" Margin="0,0,5,5" FontSize="14" Text="{Binding RegFirstName}" />
+            <TextBlock Text="Фамилия"  />
+            <TextBox Height="25" Width="250" Margin="0,0,5,5" FontSize="14" Text="{Binding RegLastName}" />
+            <TextBlock Text="Логин"  />
+            <TextBox Height="25" Width="250" Margin="0,0,5,5" FontSize="14" Text="{Binding RegLogin}" />
+            <TextBlock Text="Email"  />
+            <TextBox Height="25" Width="250" Margin="0,0,5,5" FontSize="14" Text="{Binding RegEmail}" />
+            <TextBlock Text="Номер телефона"  />
+            <TextBox Height="25" Width="250" Margin="0,0,5,5" FontSize="14" Text="{Binding RegPhone}" />
+            <TextBlock Text="Страна"  />
+            <TextBox Height="25" Width="250" Margin="0,0,5,5" FontSize="14" Text="{Binding RegCountry}" />
+            <TextBlock Text="Организация"  />
+            <TextBox Height="25" Width="250" Margin="0,0,5,5" FontSize="14"  Text="{Binding RegOrganization}"/>
+            <TextBlock Text="Пароль"  />
+            <PasswordBox Height="25" Width="250" Margin="0,0,5,5" FontSize="14" KeyUp="passw_KeyDown" x:Name="passw"/>
+           
+        </StackPanel>
+        <StackPanel Margin="0,10,0,0" Orientation="Horizontal" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Center">
+            <Button  Background="#58837e"  Width="75" Height="30" Margin="0,0,0,0" Command="{Binding ToAuth}">Назад</Button>
+            <Button  Background="#58837e"  Width="170" Height="30" Margin="15,0,4,0" Command="{Binding adus}">Зарегистрироваться</Button>
+        </StackPanel>
+    </Grid>
+</Page>

@@ -1,0 +1,47 @@
+﻿<Page x:Class="CourseWork.View.UserDataPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CourseWork.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="408.8" d:DesignWidth="666.4"
+      Title="UserDataPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="0.6*"/>
+        </Grid.RowDefinitions>
+        <DataGrid Background="#b7e5df" IsReadOnly="True" CanUserAddRows="False" CanUserDeleteRows="False" AutoGenerateColumns = "False" Grid.Row="1" SelectedItem="{Binding SelectedOrder}" ItemsSource="{Binding CurrentAdminDataGridObject}">
+            <DataGrid.Columns>
+                <DataGridTextColumn  Header="Номер заказа" Binding="{Binding Path=OrderId}"/>
+                <DataGridTextColumn Header="Номер товара" Binding="{Binding Path=Good}"/>
+                <DataGridTextColumn Header="Заказчик" Binding="{Binding Path=Customer}"/>
+                <DataGridTextColumn Header="Тип Транспорта" Binding="{Binding Path=TransportType}"/>
+                <DataGridTextColumn Header="Адрес отправки" Binding="{Binding Path=DepartureAddress}"/>
+                <DataGridTextColumn Header="Адрес доставки" Binding="{Binding Path=DestinationAddress}"/>
+                <DataGridTextColumn Header="Срок(с)" Binding="{Binding Path=LoadTime}"/>
+                <DataGridTextColumn Header="Срок(до)" Binding="{Binding Path=UnLoadTime}"/>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid Background="#b7e5df" Grid.Row="2"  CanUserAddRows="False" CanUserDeleteRows="False" AutoGenerateColumns = "False" ItemsSource="{Binding Goodss}" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Название товара" Binding="{Binding Path=GoodName}"/>
+                <DataGridTextColumn Header="Тип товара" Binding="{Binding Path=GoodType}"/>
+                <DataGridTextColumn Header="Масса" Binding="{Binding Path=Weight}"/>
+                <DataGridTextColumn Header="Объем" Binding="{Binding Path=GoodSize}"/>
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Orientation="Horizontal">
+            <TextBox FontSize="14" Width="250" Height="25" Margin="50,0,0,0" Text="{Binding SearchText}"/>
+            <Button Background="#58837e" Width="150" Height="25" Margin="20,0,0,0" Command="{Binding Search}">Поиск</Button>
+            <Button Background="#58837e" Width="150" Height="25" Margin="20,0,0,0" Command="{Binding ResetSearch}">Сбросить</Button>
+
+        </StackPanel>
+    </Grid>
+</Page>
